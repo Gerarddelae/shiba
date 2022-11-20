@@ -10,8 +10,8 @@ function App() {
   const getData = async () => {
     try {
       const res = await axios.get(API_URL);
-      const shib = Object.values(res.data)[0].usd;
-      setShiba(shib);
+      const { usd } = res.data["shiba-inu"];
+      setShiba(usd);
     } catch (error) {
       console.log(error);
     }
